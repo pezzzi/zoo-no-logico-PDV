@@ -27,6 +27,7 @@
 -define:UNITY_2021_2_OR_NEWER
 -define:UNITY_2021_3_OR_NEWER
 -define:UNITY_INCLUDE_TESTS
+-define:UNITY_ANALYTICS
 -define:USE_SEARCH_ENGINE_API
 -define:USE_SEARCH_TABLE
 -define:USE_SEARCH_MODULE
@@ -304,10 +305,10 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WebGLModule.dll"
--r:"D:/GitHub/zoo-no-logico-PDV/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
--r:"D:/GitHub/zoo-no-logico-PDV/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
--r:"D:/GitHub/zoo-no-logico-PDV/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
--r:"D:/GitHub/zoo-no-logico-PDV/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"D:/GitHub/zoo-no-logico-SSP/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"D:/GitHub/zoo-no-logico-SSP/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
+-r:"D:/GitHub/zoo-no-logico-SSP/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
+-r:"D:/GitHub/zoo-no-logico-SSP/PROGRAMACION/Unity2021/Zoo-no-logico/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Analytics.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Purchasing.Common.ref.dll"
 -r:"Library/Bee/artifacts/2000b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
@@ -380,6 +381,7 @@
 "Assets/Scripts/CodexDetail.cs"
 "Assets/Scripts/CombinateByPercent.cs"
 "Assets/Scripts/Comentarios.cs"
+"Assets/Scripts/Comida.cs"
 "Assets/Scripts/ComprarJaula.cs"
 "Assets/Scripts/ConfirmacionDesocuparJaula.cs"
 "Assets/Scripts/CuposJaulas.cs"

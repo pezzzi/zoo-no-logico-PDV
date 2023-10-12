@@ -154,6 +154,7 @@ public class JaulaManager : MonoBehaviour {
 
         JaulasArray[selectedJaula].SetActive(false);
         PlayerPrefs.SetInt("JaulaActiva" + selectedJaula, 0);
+        PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, 0);
         PlayerPrefs.SetInt("JaulasOcupadas", PlayerPrefs.GetInt("JaulasOcupadas") - 1);
         PlayerPrefs.SetString("Jaula" + selectedJaula, "");
 

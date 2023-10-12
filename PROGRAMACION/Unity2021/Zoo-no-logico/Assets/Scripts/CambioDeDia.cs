@@ -79,6 +79,10 @@ public class CambioDeDia : MonoBehaviour {
             PlayerPrefs.SetInt("Dias", numTurno);
             PopularidadBarra.SetActive(true);
             PlayerPrefs.SetInt("EventoCartas", 1);
+            for (int i = 0; i < 20; i++)
+            {
+                PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
+            }
         }
         else
         {
