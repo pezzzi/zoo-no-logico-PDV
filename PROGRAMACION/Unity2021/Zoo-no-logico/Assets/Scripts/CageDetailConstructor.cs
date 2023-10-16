@@ -73,7 +73,7 @@ public class CageDetailConstructor : MonoBehaviour
         {
             cageDivisor = 2;
         }
-        print(PlayerPrefs.GetInt("cage" + index.ToString() + "Money"));
+        //print(PlayerPrefs.GetInt("cage" + index.ToString() + "Money"));
         int plataInt = PlayerPrefs.GetInt("cage" + index.ToString() + "Money") / cageDivisor;
         plata.text = plataInt.ToString();
     }

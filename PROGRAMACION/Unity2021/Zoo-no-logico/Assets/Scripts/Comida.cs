@@ -5,14 +5,15 @@ using UnityEngine;
 public class Comida : MonoBehaviour
 {
 
-    public Mati_CruzasAnimales[] cruzas;
+    public int comida;
 
-    public int selectedJaula;
+    public GameObject foodCount;
 
     // Start is called before the first frame update
     void Start()
     {
-        cruzas = Resources.LoadAll<Mati_CruzasAnimales>("");
+        comida = PlayerPrefs.GetInt("Comida");
+        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
     }
 
     // Update is called once per frame
@@ -21,12 +22,19 @@ public class Comida : MonoBehaviour
         
     }
 
-    public void AddSaciedad()
+    public void AddComida()
     {
-        selectedJaula = PlayerPrefs.GetInt("IndexDesocuparJaula");
-        print("Nombre: " + PlayerPrefs.GetString("Jaula" + selectedJaula));
-        print("Saciedad antes: " + PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula));
-        PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + 10);
-        print("Saciedad despues: " + PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula));
+        comida = PlayerPrefs.GetInt("Comida");
+        PlayerPrefs.SetInt("Comida", comida + 1);
+
+        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
+    }
+
+    public void SubtractComida()
+    {
+        comida = PlayerPrefs.GetInt("Comida");
+        PlayerPrefs.SetInt("Comida", comida - 1);
+
+        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
     }
 }

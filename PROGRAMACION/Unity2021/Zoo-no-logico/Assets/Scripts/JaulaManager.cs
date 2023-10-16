@@ -39,6 +39,8 @@ public class JaulaManager : MonoBehaviour {
 
     public TextAsset Cruzas;
 
+    public GameObject barraSaciedad;
+
     [System.Serializable]
     public class Cruza
     {
@@ -92,7 +94,17 @@ public class JaulaManager : MonoBehaviour {
         for (int i = 0; i < JaulasActivas.Length; i++)
         {
             JaulasActivas[i] = PlayerPrefs.GetInt("JaulaActiva" + i, JaulasActivas[i]);
+            barraSaciedad = GameObject.Find("BarraSaciedad" + i);
+
+            if (barraSaciedad)
+            {
+                GameObject.Find("BarraSaciedad" + i).GetComponent<Slider>().value = PlayerPrefs.GetInt("SaciedadJaula" + i);
+            }
+
+
         }
+
+        Debug.Log(GameObject.Find("BarraSaciedad0").GetComponent<Slider>().value);
 
 
         for (int i = 0; i < JaulasActivas.Length; i++)
