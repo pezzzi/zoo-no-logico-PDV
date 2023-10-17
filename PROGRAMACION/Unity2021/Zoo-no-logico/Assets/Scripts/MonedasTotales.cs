@@ -15,6 +15,8 @@ public class MonedasTotales : MonoBehaviour {
 
     public GameObject Cosoprueba;
 
+    [SerializeField] private Comida comidaScript;
+
     [SerializeField] private GameObject ANALYTICS;
 
     // Start is called before the first frame update
@@ -187,7 +189,6 @@ public class MonedasTotales : MonoBehaviour {
         if (Monedas > gastarPlata)
         {
             Monedas -= gastarPlata; // Al int con mis monedas le voy a restar el dato que recibe desde el botón
-            Monedas -= gastarPlata; // Al int con mis monedas le voy a restar el dato que recibe desde el botón
             PlayerPrefs.SetInt("Moneditas", Monedas);
 
             PlayerPrefs.SetInt("vezCompra", PlayerPrefs.GetInt("vezCompra") + 1);
@@ -195,6 +196,24 @@ public class MonedasTotales : MonoBehaviour {
 
             PlayerPrefs.SetInt(PlayerPrefs.GetString("animal7Tienda") + "sTotales", PlayerPrefs.GetInt(PlayerPrefs.GetString("animal7Tienda") + "sTotales") + 1);
             Cosoprueba.SendMessage("SumarCantidad" + PlayerPrefs.GetString("animal7Tienda"));
+            ANALYTICS.SendMessage("comprar");
+        }
+    }
+
+    // COMPRAR COMIDA
+
+    public void ComprarComida(int gastarPlata) // este método está recibiendo un int. Si nosotros llamamos este objeto con el botón, en el inspector deberia de aparecer un campo para rellenar
+    {
+        if (Monedas > gastarPlata)
+        {
+            Monedas -= gastarPlata; // Al int con mis monedas le voy a restar el dato que recibe desde el botón
+            PlayerPrefs.SetInt("Moneditas", Monedas);
+
+            comidaScript.SendMessage("AddComida");
+
+            PlayerPrefs.SetInt("vezCompra", PlayerPrefs.GetInt("vezCompra") + 1);
+            PlayerPrefs.SetInt("ComidaComprada", PlayerPrefs.GetInt("ComidaComprada") + 1);
+            
             ANALYTICS.SendMessage("comprar");
         }
     }

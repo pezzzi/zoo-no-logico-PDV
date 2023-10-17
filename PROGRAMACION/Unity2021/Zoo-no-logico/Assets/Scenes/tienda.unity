@@ -268,6 +268,7 @@ MonoBehaviour:
   Button: {fileID: 1594821378}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &33450662
 MonoBehaviour:
@@ -993,6 +994,7 @@ MonoBehaviour:
   Button: {fileID: 187599292}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &187599295
 MonoBehaviour:
@@ -1148,6 +1150,7 @@ MonoBehaviour:
   Button: {fileID: 807856994}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &191452530
 MonoBehaviour:
@@ -1303,6 +1306,7 @@ MonoBehaviour:
   Button: {fileID: 172952888}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 653819667}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &193233197
 MonoBehaviour:
@@ -2597,6 +2601,7 @@ MonoBehaviour:
   Button: {fileID: 443199475}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &443199478
 MonoBehaviour:
@@ -4582,6 +4587,7 @@ MonoBehaviour:
   Button: {fileID: 799526152}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &799526155
 MonoBehaviour:
@@ -5360,6 +5366,7 @@ GameObject:
   - component: {fileID: 938481039}
   - component: {fileID: 938481038}
   - component: {fileID: 938481037}
+  - component: {fileID: 938481041}
   m_Layer: 5
   m_Name: BotonComprarComida
   m_TagString: Untagged
@@ -5449,14 +5456,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 938481037}
-        m_TargetAssemblyTypeName: Comida, Assembly-CSharp
-        m_MethodName: AddComida
-        m_Mode: 1
+      - m_Target: {fileID: 938481041}
+        m_TargetAssemblyTypeName: MonedasTotales, Assembly-CSharp
+        m_MethodName: ComprarComida
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 900
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5499,6 +5506,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938481035}
   m_CullTransparentMesh: 0
+--- !u!114 &938481041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938481035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc535d30099d574cb4df511ef983db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoMonedas: {fileID: 2034835213}
+  Monedas: 0
+  testMonedas: {fileID: 0}
+  Button: {fileID: 2093792715}
+  testMonedas2: {fileID: 0}
+  Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 938481037}
+  ANALYTICS: {fileID: 0}
 --- !u!1 &950559448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,6 +6515,7 @@ MonoBehaviour:
   Button: {fileID: 1058717680}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 653819667}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1058717683
 MonoBehaviour:
@@ -6723,6 +6751,7 @@ MonoBehaviour:
   Button: {fileID: 312657976}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1068893827
 MonoBehaviour:
@@ -7039,6 +7068,7 @@ MonoBehaviour:
   Button: {fileID: 2093792715}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1087141209
 MonoBehaviour:
@@ -8606,6 +8636,7 @@ MonoBehaviour:
   Button: {fileID: 1486397126}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1486397129
 MonoBehaviour:
@@ -8921,6 +8952,7 @@ MonoBehaviour:
   Button: {fileID: 983598179}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1508144208
 MonoBehaviour:
@@ -10119,6 +10151,7 @@ MonoBehaviour:
   Button: {fileID: 1707595606}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1707595609
 MonoBehaviour:
@@ -10356,6 +10389,7 @@ MonoBehaviour:
   Button: {fileID: 1863400362}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1863400365
 MonoBehaviour:
@@ -11358,6 +11392,7 @@ MonoBehaviour:
   Button: {fileID: 82040026}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &2125038298
 MonoBehaviour:

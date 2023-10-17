@@ -23,6 +23,22 @@ public class CambioDeDia : MonoBehaviour {
 
     public float speed = 10.0f;
 
+    [SerializeField] private TextAsset Cruzas;
+
+    [System.Serializable]
+    public class Cruza
+    {
+        public string id;
+        public int popularidad;
+    }
+    [System.Serializable]
+    public class CruzaList
+    {
+        public Cruza[] cruza;
+    }
+
+    public CruzaList myCruzaList = new CruzaList();
+
 
     [SerializeField] private GameObject ANALYTICS;
 
@@ -71,6 +87,8 @@ public class CambioDeDia : MonoBehaviour {
 
     public void Pasar()
     {
+        myCruzaList = JsonUtility.FromJson<CruzaList>(Cruzas.text);
+        Debug.Log(myCruzaList + " Cruza list");
         if (!PantallaPostEvento)
         {
             numTurno++;
@@ -82,6 +100,7 @@ public class CambioDeDia : MonoBehaviour {
             for (int i = 0; i < 20; i++)
             {
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
+                //PlayerPrefs.GetString("Jaula" + i);
             }
         }
         else

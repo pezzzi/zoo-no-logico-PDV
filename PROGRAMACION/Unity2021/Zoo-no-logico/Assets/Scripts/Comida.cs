@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Comida : MonoBehaviour
 {
 
     public int comida;
 
-    public GameObject foodCount;
+    public Text foodCount;
 
     // Start is called before the first frame update
     void Start()
     {
         comida = PlayerPrefs.GetInt("Comida");
-        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
+        foodCount = GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>();
+        SetComida(comida);
     }
 
     // Update is called once per frame
@@ -22,19 +24,26 @@ public class Comida : MonoBehaviour
         
     }
 
+    public void SetComida(int cantComida)
+    {
+        PlayerPrefs.SetInt("Comida", comida);
+        foodCount.text = cantComida.ToString();
+        Debug.Log("Set texto comida " + comida);
+    }
+
     public void AddComida()
     {
         comida = PlayerPrefs.GetInt("Comida");
-        PlayerPrefs.SetInt("Comida", comida + 1);
+        comida++;
 
-        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
+        SetComida(comida);
     }
 
     public void SubtractComida()
     {
         comida = PlayerPrefs.GetInt("Comida");
-        PlayerPrefs.SetInt("Comida", comida - 1);
+        comida--;
 
-        GameObject.Find("Food count").GetComponent<UnityEngine.UI.Text>().text = comida.ToString();
+        SetComida(comida);
     }
 }

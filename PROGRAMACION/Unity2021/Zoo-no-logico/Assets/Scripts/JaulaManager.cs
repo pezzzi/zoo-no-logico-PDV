@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class JaulaManager : MonoBehaviour {
 
@@ -40,6 +40,8 @@ public class JaulaManager : MonoBehaviour {
     public TextAsset Cruzas;
 
     public GameObject barraSaciedad;
+
+    public GameObject feedCount;
 
     [System.Serializable]
     public class Cruza
@@ -95,16 +97,28 @@ public class JaulaManager : MonoBehaviour {
         {
             JaulasActivas[i] = PlayerPrefs.GetInt("JaulaActiva" + i, JaulasActivas[i]);
             barraSaciedad = GameObject.Find("BarraSaciedad" + i);
+            feedCount = GameObject.Find("feed" + i);
 
             if (barraSaciedad)
             {
                 GameObject.Find("BarraSaciedad" + i).GetComponent<Slider>().value = PlayerPrefs.GetInt("SaciedadJaula" + i);
             }
 
+            if (feedCount)
+            {
+                if (JaulasActivas[i] == 1)
+                {
+                    print("Jaula " + i + " Activa");
+                    feedCount.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("FeedJaula" + i).ToString();
+                }
+                else
+                {
+                    print("Jaula " + i + " Inctiva");
+                    feedCount.GetComponent<TMP_Text>().text = "0";
+                }
+            }
 
         }
-
-        Debug.Log(GameObject.Find("BarraSaciedad0").GetComponent<Slider>().value);
 
 
         for (int i = 0; i < JaulasActivas.Length; i++)

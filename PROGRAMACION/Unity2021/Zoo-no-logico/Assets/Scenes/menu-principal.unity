@@ -1399,6 +1399,9 @@ MonoBehaviour:
   aveDesbloqueada: {fileID: 0}
   serpienteDesbloqueada: {fileID: 0}
   speed: 10
+  Cruzas: {fileID: 0}
+  myCruzaList:
+    cruza: []
   ANALYTICS: {fileID: 0}
 --- !u!114 &208765377
 MonoBehaviour:
@@ -5628,6 +5631,9 @@ MonoBehaviour:
   aveDesbloqueada: {fileID: 1747486269}
   serpienteDesbloqueada: {fileID: 1223251120}
   speed: 10
+  Cruzas: {fileID: 4900000, guid: 8f0ca36b229e748479a44ad725f26371, type: 3}
+  myCruzaList:
+    cruza: []
   ANALYTICS: {fileID: 0}
 --- !u!114 &905196905
 MonoBehaviour:
@@ -8364,6 +8370,7 @@ MonoBehaviour:
   Button: {fileID: 0}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1368914046
 MonoBehaviour:
@@ -12290,6 +12297,7 @@ MonoBehaviour:
   Button: {fileID: 0}
   testMonedas2: {fileID: 0}
   Cosoprueba: {fileID: 0}
+  comidaScript: {fileID: 0}
   ANALYTICS: {fileID: 0}
 --- !u!114 &1875251167
 MonoBehaviour:
@@ -13211,6 +13219,9 @@ MonoBehaviour:
   aveDesbloqueada: {fileID: 0}
   serpienteDesbloqueada: {fileID: 0}
   speed: 10
+  Cruzas: {fileID: 4900000, guid: 8f0ca36b229e748479a44ad725f26371, type: 3}
+  myCruzaList:
+    cruza: []
   ANALYTICS: {fileID: 0}
 --- !u!114 &1983965513
 MonoBehaviour:
