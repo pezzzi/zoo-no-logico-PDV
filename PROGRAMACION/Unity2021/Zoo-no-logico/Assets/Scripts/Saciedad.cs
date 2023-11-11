@@ -21,6 +21,8 @@ public class Saciedad : MonoBehaviour
 
     [SerializeField] private Comida comidaHandler;
 
+    [SerializeField] private Saciedad saciedadCtrl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,19 +40,19 @@ public class Saciedad : MonoBehaviour
         slider.value = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
     }
 
-    public void AddSaciedad()
+    public void AddSaciedad(int jaula)
     {
-        saciedad = PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula);
+        saciedad = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
         comida = PlayerPrefs.GetInt("Comida");
         if (saciedad < 100)
         {
-            print("Nombre: " + PlayerPrefs.GetString("Jaula" + selectedJaula));
+            print("Nombre: " + PlayerPrefs.GetString("Jaula" + jaula));
             print("Saciedad antes: " + saciedad);
-            PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, saciedad + 10);
+            PlayerPrefs.SetInt("SaciedadJaula" + jaula, saciedad + 10);
             PlayerPrefs.SetInt("Comida", comida - 1);
-            slider = GameObject.Find("BarraSaciedad" + selectedJaula).GetComponent<Slider>();
+            slider = GameObject.Find("BarraSaciedad" + jaula).GetComponent<Slider>();
             Debug.Log(slider.value);
-            SetSaciedad(selectedJaula);
+            SetSaciedad(jaula);
             print("Saciedad despues: " + saciedad);
         } else
         {

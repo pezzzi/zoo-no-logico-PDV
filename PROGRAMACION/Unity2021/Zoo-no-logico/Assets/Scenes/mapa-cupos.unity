@@ -1416,6 +1416,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 1540097142}
   comidaHandler: {fileID: 337806141}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &337806141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,6 +1884,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &443213193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2502,6 +2504,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 1369261244}
   comidaHandler: {fileID: 573310555}
+  saciedadCtrl: {fileID: 0}
 --- !u!1 &601799197
 GameObject:
   m_ObjectHideFlags: 0
@@ -3338,6 +3341,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &875736364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4602,6 +4606,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &1144656396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7904,6 +7909,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 1369261244}
   comidaHandler: {fileID: 1751164610}
+  saciedadCtrl: {fileID: 0}
 --- !u!1 &1843289297
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,6 +7973,7 @@ MonoBehaviour:
   comida: 0
   feedCount: {fileID: 1540097142}
   comidaHandler: {fileID: 1843289300}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &1843289300
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -101,6 +101,7 @@ public class CambioDeDia : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
                 //PlayerPrefs.GetString("Jaula" + i);
+
             }
         }
         else
