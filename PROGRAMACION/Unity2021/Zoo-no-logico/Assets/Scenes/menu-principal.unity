@@ -1347,6 +1347,7 @@ GameObject:
   - component: {fileID: 208765379}
   - component: {fileID: 208765378}
   - component: {fileID: 208765377}
+  - component: {fileID: 208765380}
   - component: {fileID: 208765376}
   m_Layer: 5
   m_Name: Siguiente Dia
@@ -1403,6 +1404,7 @@ MonoBehaviour:
   myCruzaList:
     cruza: []
   ANALYTICS: {fileID: 0}
+  saciedadCtrl: {fileID: 208765380}
 --- !u!114 &208765377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1499,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208765374}
   m_CullTransparentMesh: 0
+--- !u!114 &208765380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208765374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccad2ee37e557d479516953aa77739c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cruzas: []
+  selectedJaula: 0
+  saciedad: 0
+  slider: {fileID: 0}
+  comida: 0
+  feedCount: {fileID: 0}
+  comidaHandler: {fileID: 0}
 --- !u!1 &218527429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5635,6 +5656,7 @@ MonoBehaviour:
   myCruzaList:
     cruza: []
   ANALYTICS: {fileID: 0}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &905196905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13223,6 +13245,7 @@ MonoBehaviour:
   myCruzaList:
     cruza: []
   ANALYTICS: {fileID: 0}
+  saciedadCtrl: {fileID: 0}
 --- !u!114 &1983965513
 MonoBehaviour:
   m_ObjectHideFlags: 0

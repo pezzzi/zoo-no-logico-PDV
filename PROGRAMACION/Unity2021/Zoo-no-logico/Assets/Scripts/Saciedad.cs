@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class Saciedad : MonoBehaviour
 {
@@ -21,8 +22,6 @@ public class Saciedad : MonoBehaviour
 
     [SerializeField] private Comida comidaHandler;
 
-    [SerializeField] private Saciedad saciedadCtrl;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,19 +39,19 @@ public class Saciedad : MonoBehaviour
         slider.value = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
     }
 
-    public void AddSaciedad(int jaula)
+    public void AddSaciedad()
     {
-        saciedad = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
+        saciedad = PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula);
         comida = PlayerPrefs.GetInt("Comida");
         if (saciedad < 100)
         {
-            print("Nombre: " + PlayerPrefs.GetString("Jaula" + jaula));
+            print("Nombre: " + PlayerPrefs.GetString("Jaula" + selectedJaula));
             print("Saciedad antes: " + saciedad);
-            PlayerPrefs.SetInt("SaciedadJaula" + jaula, saciedad + 10);
+            PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, saciedad + 10);
             PlayerPrefs.SetInt("Comida", comida - 1);
-            slider = GameObject.Find("BarraSaciedad" + jaula).GetComponent<Slider>();
+            slider = GameObject.Find("BarraSaciedad" + selectedJaula).GetComponent<Slider>();
             Debug.Log(slider.value);
-            SetSaciedad(jaula);
+            SetSaciedad(selectedJaula);
             print("Saciedad despues: " + saciedad);
         } else
         {
@@ -60,14 +59,44 @@ public class Saciedad : MonoBehaviour
         }
     }
 
+    public void AddSaciedadByJaula(int jaula, int feedCount)
+    {
+        for (int i = 0; i < feedCount; i++)
+        {
+            saciedad = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
+            comida = PlayerPrefs.GetInt("Comida");
+            if (saciedad < 100)
+            {
+                print("Nombre: " + PlayerPrefs.GetString("Jaula" + jaula));
+                print("Saciedad antes: " + saciedad);
+                PlayerPrefs.SetInt("SaciedadJaula" + jaula, saciedad + 10);
+                //PlayerPrefs.SetInt("Comida", comida - 1);
+                //slider = GameObject.Find("BarraSaciedad" + jaula).GetComponent<Slider>();
+                //Debug.Log(slider.value);
+                //SetSaciedad(jaula);
+                print("Saciedad despues: " + saciedad);
+            }
+        }
+    }
+
     public void AddToQueue()
     {
-        if (PlayerPrefs.GetInt("Comida") > 0)
+        print(PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula));
+        if ((PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + (PlayerPrefs.GetInt("FeedJaula" + selectedJaula) * 10)) < 100)
         {
-            comidaHandler.SendMessage("SubtractComida");
-            PlayerPrefs.SetInt("FeedJaula" + selectedJaula, PlayerPrefs.GetInt("FeedJaula" + selectedJaula) + 1);
+            if (PlayerPrefs.GetInt("Comida") > 0)
+            {
+                comidaHandler.SendMessage("SubtractComida");
+                PlayerPrefs.SetInt("FeedJaula" + selectedJaula, PlayerPrefs.GetInt("FeedJaula" + selectedJaula) + 1);
 
-            feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) + 1).ToString();
+                feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) + 1).ToString();
+            } else
+            {
+                Debug.Log("No tienes más comida");
+            }
+        } else
+        {
+            Debug.Log("El animal ya estará en 100 de saciedad");
         }
        
     }
@@ -81,5 +110,39 @@ public class Saciedad : MonoBehaviour
 
             feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) - 1).ToString();
         }
+    }
+
+    public void AutoFeed()
+    {
+        int foodPerCage = (int)MathF.Floor(PlayerPrefs.GetInt("Comida") / PlayerPrefs.GetInt("JaulasOcupadas"));
+        foodPerCage = Math.Min(foodPerCage, 1);
+            for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
+            {
+                if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
+                {
+                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) < 100)
+                    {
+                        for (int e = 0; e < foodPerCage; e++)
+                        {
+                            if (PlayerPrefs.GetInt("Comida") > 0)
+                            {
+                                comidaHandler.SendMessage("SubtractComida");
+                                PlayerPrefs.SetInt("FeedJaula" + i, PlayerPrefs.GetInt("FeedJaula" + i) + 1);
+                                feedCount = GameObject.Find("feed" + i);
+                                feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) + 1).ToString();
+                            }
+                            else
+                            {
+                                Debug.Log("No tienes más comida");
+                            break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("El animal ya estará en 100 de saciedad");
+                    }
+                }
+            }
     }
 }

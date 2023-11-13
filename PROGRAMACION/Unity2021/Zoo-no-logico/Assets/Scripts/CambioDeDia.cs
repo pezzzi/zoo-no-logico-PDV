@@ -42,6 +42,8 @@ public class CambioDeDia : MonoBehaviour {
 
     [SerializeField] private GameObject ANALYTICS;
 
+    [SerializeField] private Saciedad saciedadCtrl;
+
     // Use this for initialization
     void Start() {
         textoTurno = GameObject.FindGameObjectWithTag("TextoDias").GetComponent<Text>();
@@ -101,7 +103,12 @@ public class CambioDeDia : MonoBehaviour {
             {
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
                 //PlayerPrefs.GetString("Jaula" + i);
-
+                int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
+                for (int e = 0; e < feedCount; e++)
+                {
+                    saciedadCtrl.AddSaciedadByJaula(i, feedCount);
+                    PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                }
             }
         }
         else
@@ -126,7 +133,7 @@ public class CambioDeDia : MonoBehaviour {
             listaAnimales[rnd] = listaAnimales[i];
             listaAnimales[i] = tempGO;
         }
-        print (listaAnimales[0]);
+        print ("RANDOM ACA: " + listaAnimales[0]);
 
         PlayerPrefs.SetString("animal1Tienda", listaAnimales[0]);
         PlayerPrefs.SetString("animal2Tienda", listaAnimales[1]);
