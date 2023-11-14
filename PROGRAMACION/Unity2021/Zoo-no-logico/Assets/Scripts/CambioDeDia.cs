@@ -89,6 +89,7 @@ public class CambioDeDia : MonoBehaviour {
 
     public void Pasar()
     {
+        Debug.Log("Nuevo dia");
         myCruzaList = JsonUtility.FromJson<CruzaList>(Cruzas.text);
         Debug.Log(myCruzaList + " Cruza list");
         if (!PantallaPostEvento)

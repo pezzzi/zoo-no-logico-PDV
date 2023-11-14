@@ -115,8 +115,8 @@ public class Saciedad : MonoBehaviour
     public void AutoFeed()
     {
         int foodPerCage = (int)MathF.Floor(PlayerPrefs.GetInt("Comida") / PlayerPrefs.GetInt("JaulasOcupadas"));
-        foodPerCage = Math.Min(foodPerCage, 1);
-            for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
+        foodPerCage = Math.Max(foodPerCage, 1);
+        for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
             {
                 if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
                 {
