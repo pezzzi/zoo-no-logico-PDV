@@ -12,6 +12,7 @@ public class CambioDeDia : MonoBehaviour {
     public GameObject PantallaPostEvento;
     public GameObject PantallaPerder;
     public GameObject PantallaGanar;
+    public GameObject PantallaAnimalFallecido;
     public int Popularidad;
     public GameObject PopularidadBarra;
     private string[] listaAnimales = new string[] { "Carpincho", "Cocodrilo", "Arana", "Ave", "Serpiente", "Zorro", "Murcielago" };
@@ -92,6 +93,7 @@ public class CambioDeDia : MonoBehaviour {
         Debug.Log("Nuevo dia");
         myCruzaList = JsonUtility.FromJson<CruzaList>(Cruzas.text);
         Debug.Log(myCruzaList + " Cruza list");
+        print("Test: " + myCruzaList.cruza[0].popularidad);
         if (!PantallaPostEvento)
         {
             numTurno++;
@@ -103,6 +105,18 @@ public class CambioDeDia : MonoBehaviour {
             for (int i = 0; i < 20; i++)
             {
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
+                if ((PlayerPrefs.GetInt("JaulaActiva" + i) == 1) && PlayerPrefs.GetInt("SaciedadJaula" + i) <= 0)
+                {
+                    print(int.Parse(PlayerPrefs.GetString("Jaula" + i)));
+                    PlayerPrefs.SetInt("popularidad", PlayerPrefs.GetInt("popularidad") - myCruzaList.cruza[int.Parse(PlayerPrefs.GetString("Jaula" + i))].popularidad);
+
+                    PlayerPrefs.SetInt("JaulaActiva" + i, 0);
+                    PlayerPrefs.SetInt("SaciedadJaula" + i, 0);
+                    PlayerPrefs.SetInt("JaulasOcupadas", PlayerPrefs.GetInt("JaulasOcupadas") - 1);
+                    PlayerPrefs.SetString("Jaula" + i, "");
+
+                    PantallaAnimalFallecido.SetActive(true);
+                }
                 //PlayerPrefs.GetString("Jaula" + i);
                 int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
                 for (int e = 0; e < feedCount; e++)
@@ -117,6 +131,11 @@ public class CambioDeDia : MonoBehaviour {
             Pantalla.SetActive(false);
             PlayerPrefs.SetInt("ImpuestoXDiasSinCruzas", PlayerPrefs.GetInt("ImpuestoXDiasSinCruzas"));
         }
+    }
+
+    public void CerrarPantallaAnimalFallecido()
+    {
+        PantallaAnimalFallecido.SetActive(false);
     }
 
     public void AbrirPantalla()

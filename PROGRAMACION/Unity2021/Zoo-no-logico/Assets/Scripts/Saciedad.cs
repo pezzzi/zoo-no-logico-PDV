@@ -16,7 +16,11 @@ public class Saciedad : MonoBehaviour
 
     public Slider slider;
 
+    public Image sliderFill;
+
     public int comida;
+
+    public GameObject PantallaFaltaComida;
 
     [SerializeField] private GameObject feedCount;
 
@@ -36,6 +40,7 @@ public class Saciedad : MonoBehaviour
 
     public void SetSaciedad(int jaula)
     {
+
         slider.value = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
     }
 
@@ -82,7 +87,7 @@ public class Saciedad : MonoBehaviour
     public void AddToQueue()
     {
         print(PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula));
-        if ((PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + (PlayerPrefs.GetInt("FeedJaula" + selectedJaula) * 10)) < 100)
+        if ((PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + (PlayerPrefs.GetInt("FeedJaula" + selectedJaula) * 10)) <= 110)
         {
             if (PlayerPrefs.GetInt("Comida") > 0)
             {
@@ -120,7 +125,7 @@ public class Saciedad : MonoBehaviour
             {
                 if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
                 {
-                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) < 100)
+                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) <= 110)
                     {
                         for (int e = 0; e < foodPerCage; e++)
                         {
@@ -133,6 +138,7 @@ public class Saciedad : MonoBehaviour
                             }
                             else
                             {
+                                PantallaFaltaComida.SetActive(true);
                                 Debug.Log("No tienes más comida");
                             break;
                             }
@@ -144,5 +150,10 @@ public class Saciedad : MonoBehaviour
                     }
                 }
             }
+    }
+
+    public void HidePantallaFaltaComida()
+    {
+        PantallaFaltaComida.SetActive(false);
     }
 }

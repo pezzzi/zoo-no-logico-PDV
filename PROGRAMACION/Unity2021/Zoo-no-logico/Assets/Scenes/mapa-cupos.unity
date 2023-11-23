@@ -184,7 +184,9 @@ MonoBehaviour:
   selectedJaula: 6
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 915258257}
   comidaHandler: {fileID: 1556276}
 --- !u!114 &1556276
@@ -355,7 +357,9 @@ MonoBehaviour:
   selectedJaula: 16
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1428987955}
   comidaHandler: {fileID: 4731740}
 --- !u!114 &4731740
@@ -1061,7 +1065,9 @@ MonoBehaviour:
   selectedJaula: 1
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 467901296}
   comidaHandler: {fileID: 46586631}
 --- !u!114 &46586631
@@ -1248,6 +1254,162 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54521304}
   m_CullTransparentMesh: 1
+--- !u!1 &55577741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 55577742}
+  - component: {fileID: 55577746}
+  - component: {fileID: 55577745}
+  - component: {fileID: 55577744}
+  - component: {fileID: 55577743}
+  m_Layer: 5
+  m_Name: ok
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &55577742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55577741}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 874751428}
+  m_Father: {fileID: 443911863}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 7.140003, y: -91.299995}
+  m_SizeDelta: {x: 47.09, y: 32.97}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &55577743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55577741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccad2ee37e557d479516953aa77739c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cruzas: []
+  selectedJaula: 0
+  saciedad: 0
+  slider: {fileID: 0}
+  sliderFill: {fileID: 0}
+  comida: 0
+  PantallaFaltaComida: {fileID: 443911862}
+  feedCount: {fileID: 0}
+  comidaHandler: {fileID: 0}
+--- !u!114 &55577744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55577741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 55577745}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 55577743}
+        m_TargetAssemblyTypeName: Saciedad, Assembly-CSharp
+        m_MethodName: HidePantallaFaltaComida
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &55577745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55577741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c84996fae5d9f8342a50cb2b4ca0fd9d, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &55577746
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55577741}
+  m_CullTransparentMesh: 0
 --- !u!1 &57960328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,105 +2413,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.37998962, y: -1.6849976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &113282621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113282622}
-  - component: {fileID: 113282625}
-  - component: {fileID: 113282624}
-  - component: {fileID: 113282623}
-  m_Layer: 5
-  m_Name: Alerta animal fallecido
-  m_TagString: ConfirmacionDesocupar
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &113282622
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113282621}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1939822103}
-  - {fileID: 241615742}
-  m_Father: {fileID: 1255496401}
-  m_RootOrder: 31
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.1, y: 2.98}
-  m_SizeDelta: {x: 381.48, y: 171.04}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &113282623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113282621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e429650cdcf3fd840b2f80e844621f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cruzas: {fileID: 4900000, guid: 8f0ca36b229e748479a44ad725f26371, type: 3}
-  plata: {fileID: 0}
-  popularidad: {fileID: 0}
-  animal: {fileID: 0}
-  CruzasArray: []
-  JaulasArray: []
-  myCruzaList:
-    cruza: []
---- !u!114 &113282624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113282621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82838b9b94bf8a645bf29cc16f8092bf, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &113282625
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113282621}
-  m_CullTransparentMesh: 0
 --- !u!1 &116315593
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,7 +3063,9 @@ MonoBehaviour:
   selectedJaula: 1
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 467901296}
   comidaHandler: {fileID: 155972905}
 --- !u!114 &155972905
@@ -3441,7 +3506,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 188610119}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &188610119
@@ -4297,87 +4364,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240068966}
   m_CullTransparentMesh: 0
---- !u!1 &241615741
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 241615742}
-  - component: {fileID: 241615744}
-  - component: {fileID: 241615743}
-  m_Layer: 5
-  m_Name: alerta texto
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &241615742
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241615741}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 113282622}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 10.300003, y: -28.29}
-  m_SizeDelta: {x: -27.41, y: -65.17}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &241615743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241615741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.12941177, g: 0.3019608, b: 0.14117648, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 5299682af1b23ba459bdf98603d0f96f, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Uno de tus animales no ha sido alimentado lo suficiente y su jaula se ha
-    vaciado
---- !u!222 &241615744
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241615741}
-  m_CullTransparentMesh: 0
 --- !u!1 &248272913
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,7 +4766,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 267787968}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &267787968
@@ -5168,7 +5156,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 284877871}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &284877871
@@ -5725,7 +5715,9 @@ MonoBehaviour:
   selectedJaula: 2
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1554102378}
   comidaHandler: {fileID: 310205722}
 --- !u!114 &310205722
@@ -6018,7 +6010,9 @@ MonoBehaviour:
   selectedJaula: 19
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 207123595}
   comidaHandler: {fileID: 314289174}
 --- !u!114 &314289174
@@ -6311,7 +6305,9 @@ MonoBehaviour:
   selectedJaula: 3
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1939895574}
   comidaHandler: {fileID: 322734523}
 --- !u!114 &322734523
@@ -7432,7 +7428,9 @@ MonoBehaviour:
   selectedJaula: 9
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1659763891}
   comidaHandler: {fileID: 392403013}
 --- !u!114 &392403013
@@ -7987,7 +7985,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 409642910}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &409642910
@@ -8659,7 +8659,6 @@ GameObject:
   - component: {fileID: 443911863}
   - component: {fileID: 443911866}
   - component: {fileID: 443911865}
-  - component: {fileID: 443911864}
   m_Layer: 5
   m_Name: Alerta falta comida
   m_TagString: ConfirmacionDesocupar
@@ -8681,6 +8680,7 @@ RectTransform:
   m_Children:
   - {fileID: 284704523}
   - {fileID: 1461464349}
+  - {fileID: 55577742}
   m_Father: {fileID: 1255496401}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8689,26 +8689,6 @@ RectTransform:
   m_AnchoredPosition: {x: -24.1, y: 2.98}
   m_SizeDelta: {x: 381.48, y: 171.04}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &443911864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443911862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e429650cdcf3fd840b2f80e844621f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Cruzas: {fileID: 4900000, guid: 8f0ca36b229e748479a44ad725f26371, type: 3}
-  plata: {fileID: 0}
-  popularidad: {fileID: 0}
-  animal: {fileID: 0}
-  CruzasArray: []
-  JaulasArray: []
-  myCruzaList:
-    cruza: []
 --- !u!114 &443911865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9743,7 +9723,9 @@ MonoBehaviour:
   selectedJaula: 5
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1567899966}
   comidaHandler: {fileID: 532462539}
 --- !u!114 &532462539
@@ -9990,7 +9972,9 @@ MonoBehaviour:
   selectedJaula: 13
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 714578236}
   comidaHandler: {fileID: 548340547}
 --- !u!114 &548340547
@@ -10372,7 +10356,9 @@ MonoBehaviour:
   selectedJaula: 4
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1583327659}
   comidaHandler: {fileID: 571233363}
 --- !u!114 &571233363
@@ -10651,7 +10637,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1369261244}
   comidaHandler: {fileID: 573310555}
 --- !u!1 &581547193
@@ -11140,7 +11128,9 @@ MonoBehaviour:
   selectedJaula: 15
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 614156030}
   comidaHandler: {fileID: 601539141}
 --- !u!114 &601539141
@@ -11809,7 +11799,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 627407477}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &627407477
@@ -12003,7 +11995,9 @@ MonoBehaviour:
   selectedJaula: 14
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1537011801}
   comidaHandler: {fileID: 639918971}
 --- !u!114 &639918971
@@ -12389,7 +12383,9 @@ MonoBehaviour:
   selectedJaula: 7
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 350419724}
   comidaHandler: {fileID: 655956602}
 --- !u!114 &655956602
@@ -12784,7 +12780,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 681589251}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &681589251
@@ -12898,7 +12896,9 @@ MonoBehaviour:
   selectedJaula: 13
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 714578236}
   comidaHandler: {fileID: 692935108}
 --- !u!114 &692935108
@@ -13204,7 +13204,9 @@ MonoBehaviour:
   selectedJaula: 18
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1277505190}
   comidaHandler: {fileID: 698498890}
 --- !u!114 &698498890
@@ -14302,7 +14304,9 @@ MonoBehaviour:
   selectedJaula: 16
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1428987955}
   comidaHandler: {fileID: 760811375}
 --- !u!114 &760811375
@@ -14625,7 +14629,9 @@ MonoBehaviour:
   selectedJaula: 10
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 81321163}
   comidaHandler: {fileID: 768349109}
 --- !u!114 &768349109
@@ -15323,7 +15329,9 @@ MonoBehaviour:
   selectedJaula: 8
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 59007824}
   comidaHandler: {fileID: 808277687}
 --- !u!114 &808277687
@@ -15646,7 +15654,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 834106965}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &834106965
@@ -16430,6 +16440,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870893903}
   m_CullTransparentMesh: 1
+--- !u!1 &874751427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874751428}
+  - component: {fileID: 874751430}
+  - component: {fileID: 874751429}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &874751428
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874751427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 55577742}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &874751429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874751427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.15297422, g: 0.3490566, b: 0.13336597, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 5299682af1b23ba459bdf98603d0f96f, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: OK
+--- !u!222 &874751430
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874751427}
+  m_CullTransparentMesh: 0
 --- !u!1 &879401293
 GameObject:
   m_ObjectHideFlags: 0
@@ -16490,7 +16580,9 @@ MonoBehaviour:
   selectedJaula: 4
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1583327659}
   comidaHandler: {fileID: 879401296}
 --- !u!114 &879401296
@@ -17158,7 +17250,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 913584424}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &913584424
@@ -17647,7 +17741,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 947406662}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &947406662
@@ -18842,7 +18938,9 @@ MonoBehaviour:
   selectedJaula: 5
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1567899966}
   comidaHandler: {fileID: 984025855}
 --- !u!114 &984025855
@@ -20872,7 +20970,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1112646130}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1112646130
@@ -21066,7 +21166,9 @@ MonoBehaviour:
   selectedJaula: 17
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 2015776178}
   comidaHandler: {fileID: 1124867663}
 --- !u!114 &1124867663
@@ -21427,7 +21529,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1144656396}
+  sliderFill: {fileID: 145905751}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1144656396
@@ -21541,7 +21645,9 @@ MonoBehaviour:
   selectedJaula: 15
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 614156030}
   comidaHandler: {fileID: 1146382422}
 --- !u!114 &1146382422
@@ -22458,7 +22564,9 @@ MonoBehaviour:
   selectedJaula: 12
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1740093010}
   comidaHandler: {fileID: 1198298096}
 --- !u!114 &1198298096
@@ -22831,7 +22939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94117653, g: 0.7568628, b: 0.18431373, a: 1}
+  m_Color: {r: 0.7735849, g: 0.08392668, b: 0.35534096, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -23144,7 +23252,9 @@ MonoBehaviour:
   selectedJaula: 10
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 81321163}
   comidaHandler: {fileID: 1239258582}
 --- !u!114 &1239258582
@@ -23315,7 +23425,9 @@ MonoBehaviour:
   selectedJaula: 9
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1659763891}
   comidaHandler: {fileID: 1239622832}
 --- !u!114 &1239622832
@@ -23668,7 +23780,6 @@ RectTransform:
   - {fileID: 1704442992}
   - {fileID: 1512300403}
   - {fileID: 443911863}
-  - {fileID: 113282622}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24126,7 +24237,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1272458768}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1272458768
@@ -24240,7 +24353,9 @@ MonoBehaviour:
   selectedJaula: 18
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1277505190}
   comidaHandler: {fileID: 1272680087}
 --- !u!114 &1272680087
@@ -26482,7 +26597,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 443911862}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 1407392175}
 --- !u!114 &1407392172
@@ -26729,7 +26846,9 @@ MonoBehaviour:
   selectedJaula: 2
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1554102378}
   comidaHandler: {fileID: 1423429644}
 --- !u!114 &1423429644
@@ -27246,7 +27365,9 @@ MonoBehaviour:
   selectedJaula: 14
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1537011801}
   comidaHandler: {fileID: 1443803859}
 --- !u!114 &1443803859
@@ -27902,7 +28023,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1470960909}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1470960909
@@ -28012,7 +28135,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1473524336}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1473524336
@@ -28733,7 +28858,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1507135654}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1507135654
@@ -28895,6 +29022,8 @@ MonoBehaviour:
   animal: {fileID: 382457710}
   CruzasArray: []
   JaulasArray: []
+  slider: {fileID: 1576935995}
+  sliderFill: {fileID: 1221301605}
   myCruzaList:
     cruza: []
 --- !u!1 &1515322779
@@ -30028,7 +30157,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1566263429}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1566263429
@@ -30351,7 +30482,7 @@ GameObject:
   - component: {fileID: 1576935995}
   - component: {fileID: 1576935994}
   m_Layer: 0
-  m_Name: BarraSaciedad0
+  m_Name: BarraSaciedadDetalle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30395,7 +30526,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1576935995}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1576935995
@@ -32783,7 +32916,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1698957146}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1698957146
@@ -33236,7 +33371,9 @@ MonoBehaviour:
   selectedJaula: 19
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 207123595}
   comidaHandler: {fileID: 1713226806}
 --- !u!114 &1713226806
@@ -33601,7 +33738,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1733788081}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1733788081
@@ -34236,7 +34375,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1369261244}
   comidaHandler: {fileID: 1751164610}
 --- !u!1 &1751560501
@@ -34877,7 +35018,9 @@ MonoBehaviour:
   selectedJaula: 6
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 915258257}
   comidaHandler: {fileID: 1792230058}
 --- !u!114 &1792230058
@@ -35200,7 +35343,9 @@ MonoBehaviour:
   selectedJaula: 11
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 32410977}
   comidaHandler: {fileID: 1818008957}
 --- !u!114 &1818008957
@@ -35523,7 +35668,9 @@ MonoBehaviour:
   selectedJaula: 12
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1740093010}
   comidaHandler: {fileID: 1839616188}
 --- !u!114 &1839616188
@@ -36862,7 +37009,9 @@ MonoBehaviour:
   selectedJaula: 3
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 1939895574}
   comidaHandler: {fileID: 1905319993}
 --- !u!114 &1905319993
@@ -37443,82 +37592,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939535588}
   m_CullTransparentMesh: 0
---- !u!1 &1939822102
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1939822103}
-  - component: {fileID: 1939822105}
-  - component: {fileID: 1939822104}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1939822103
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939822102}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 113282622}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.14, y: -26.51}
-  m_SizeDelta: {x: 338.6, y: 77.57}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1939822104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939822102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.7490196, b: 0.2509804, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1939822105
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939822102}
-  m_CullTransparentMesh: 1
 --- !u!1 &1939895574
 GameObject:
   m_ObjectHideFlags: 0
@@ -37866,7 +37939,9 @@ MonoBehaviour:
   selectedJaula: 7
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 350419724}
   comidaHandler: {fileID: 1957936764}
 --- !u!114 &1957936764
@@ -38269,7 +38344,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 1968026124}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &1968026124
@@ -38594,7 +38671,9 @@ MonoBehaviour:
   selectedJaula: 11
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 32410977}
   comidaHandler: {fileID: 1978348790}
 --- !u!114 &1978348790
@@ -39178,7 +39257,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 2002937694}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!114 &2002937694
@@ -40160,7 +40241,9 @@ MonoBehaviour:
   selectedJaula: 8
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 59007824}
   comidaHandler: {fileID: 2034961897}
 --- !u!114 &2034961897
@@ -42220,7 +42303,9 @@ MonoBehaviour:
   selectedJaula: 17
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 2015776178}
   comidaHandler: {fileID: 2142587192}
 --- !u!114 &2142587192

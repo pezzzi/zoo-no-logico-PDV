@@ -97,6 +97,27 @@ public class JaulaManager : MonoBehaviour {
         {
             JaulasActivas[i] = PlayerPrefs.GetInt("JaulaActiva" + i, JaulasActivas[i]);
             barraSaciedad = GameObject.Find("BarraSaciedad" + i);
+            if (barraSaciedad)
+            {
+                Image barraFill = barraSaciedad.GetComponentInChildren<Image>();
+
+                if (barraFill)
+                {
+                    if (PlayerPrefs.GetInt("SaciedadJaula" + i) >= 70)
+                    {
+                        barraFill.color = new Color(0.259f, 0.85f, 0.188f, 1);
+                    }
+                    else if (PlayerPrefs.GetInt("SaciedadJaula" + i) < 70 && PlayerPrefs.GetInt("SaciedadJaula" + i) >= 40)
+                    {
+                        barraFill.color = new Color(0.894f, 0.941f, 0.118f, 1);
+                    }
+                    else if (PlayerPrefs.GetInt("SaciedadJaula" + i) < 40)
+                    {
+                        barraFill.color = new Color(0.89f, 0.239f, 0.216f, 1);
+                    }
+                }
+            }
+            
             feedCount = GameObject.Find("feed" + i);
 
             if (barraSaciedad)
