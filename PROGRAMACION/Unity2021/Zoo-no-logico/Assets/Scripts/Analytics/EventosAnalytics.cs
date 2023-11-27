@@ -422,6 +422,34 @@ public class EventosAnalytics : MonoBehaviour
             {"logro28", PlayerPrefs.GetInt("Logro28")},
         }); //TERMINADO
     }
+
+    public void alimentar(int jaulaIndex)
+    {
+        AnalyticsService.Instance.CustomData("alimentar", new Dictionary<string, object>(){
+            {"saciedad_previa", PlayerPrefs.GetInt("SaciedadJaula" + jaulaIndex)},
+            {"cant_alimentada", PlayerPrefs.GetInt("FeedJaula" + jaulaIndex)},
+            {"vez", PlayerPrefs.GetInt("alimentarAnimalTotal")},
+        }); //TERMINADO
+    }
+
+    public void animal_fallecido()
+    {
+        AnalyticsService.Instance.CustomData("animal_fallecido", new Dictionary<string, object>(){
+            {"dias", PlayerPrefs.GetInt("Dias")},
+            {"vez", PlayerPrefs.GetInt("animalMuertoTotal")},
+            {"cupos", PlayerPrefs.GetInt("JaulasOcupadas")},
+        }); //TERMINADO
+    }
+
+    public void comprar_comida(int cantidadComprada)
+    {
+        AnalyticsService.Instance.CustomData("comprar_comida", new Dictionary<string, object>(){
+            {"vez", PlayerPrefs.GetInt("comidaCompradaTotal")},
+            {"dias", PlayerPrefs.GetInt("Dias")},
+            {"dinero", PlayerPrefs.GetInt("Moneditas")},
+            {"cantidad_comprada", cantidadComprada},
+        }); //TERMINADO
+    }
 }
 
 

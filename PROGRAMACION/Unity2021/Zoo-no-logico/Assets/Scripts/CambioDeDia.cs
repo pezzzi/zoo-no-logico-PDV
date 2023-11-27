@@ -107,6 +107,9 @@ public class CambioDeDia : MonoBehaviour {
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
                 if ((PlayerPrefs.GetInt("JaulaActiva" + i) == 1) && PlayerPrefs.GetInt("SaciedadJaula" + i) <= 0)
                 {
+                    PlayerPrefs.SetInt("animalMuertoTotal", PlayerPrefs.GetInt("animalMuertoTotal") + 1);
+                    ANALYTICS.SendMessage("animal_fallecido", i);
+
                     print(int.Parse(PlayerPrefs.GetString("Jaula" + i)));
                     PlayerPrefs.SetInt("popularidad", PlayerPrefs.GetInt("popularidad") - myCruzaList.cruza[int.Parse(PlayerPrefs.GetString("Jaula" + i))].popularidad);
 
@@ -117,13 +120,20 @@ public class CambioDeDia : MonoBehaviour {
 
                     PantallaAnimalFallecido.SetActive(true);
                 }
-                //PlayerPrefs.GetString("Jaula" + i);
+
                 int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
-                for (int e = 0; e < feedCount; e++)
+                if (PlayerPrefs.GetInt("SaciedadJaula" + i) > 0 && feedCount > 0)
                 {
-                    saciedadCtrl.AddSaciedadByJaula(i, feedCount);
-                    PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                    PlayerPrefs.SetInt("alimentarAnimalTotal", PlayerPrefs.GetInt("alimentarAnimalTotal") + 1);
+                    ANALYTICS.SendMessage("alimentar", i);
+                    for (int e = 0; e < feedCount; e++)
+                    {
+                        saciedadCtrl.AddSaciedadByJaula(i, feedCount);
+                        PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                    }
                 }
+                //PlayerPrefs.GetString("Jaula" + i);
+
             }
         }
         else

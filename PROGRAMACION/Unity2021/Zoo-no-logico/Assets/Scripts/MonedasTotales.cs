@@ -214,7 +214,7 @@ public class MonedasTotales : MonoBehaviour {
             PlayerPrefs.SetInt("vezCompra", PlayerPrefs.GetInt("vezCompra") + 1);
             PlayerPrefs.SetInt("ComidaComprada", PlayerPrefs.GetInt("ComidaComprada") + 1);
             
-            ANALYTICS.SendMessage("comprar");
+            ANALYTICS.SendMessage("comprar_comida", 1);
         }
     }
 
@@ -230,7 +230,7 @@ public class MonedasTotales : MonoBehaviour {
             PlayerPrefs.SetInt("vezCompra", PlayerPrefs.GetInt("vezCompra") + 1);
             PlayerPrefs.SetInt("ComidaComprada", PlayerPrefs.GetInt("ComidaComprada") + 5);
 
-            ANALYTICS.SendMessage("comprar");
+            ANALYTICS.SendMessage("comprar_comida", 5);
         }
     }
 
