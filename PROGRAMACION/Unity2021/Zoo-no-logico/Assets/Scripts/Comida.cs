@@ -39,6 +39,14 @@ public class Comida : MonoBehaviour
         SetComida(comida);
     }
 
+    public void AddPackComida()
+    {
+        comida = PlayerPrefs.GetInt("Comida");
+        comida = comida + 5;
+
+        SetComida(comida);
+    }
+
     public void SubtractComida()
     {
         comida = PlayerPrefs.GetInt("Comida");

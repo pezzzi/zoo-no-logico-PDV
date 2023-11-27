@@ -218,4 +218,20 @@ public class MonedasTotales : MonoBehaviour {
         }
     }
 
+    public void ComprarPackComida(int gastarPlata) // este método está recibiendo un int. Si nosotros llamamos este objeto con el botón, en el inspector deberia de aparecer un campo para rellenar
+    {
+        if (Monedas > gastarPlata)
+        {
+            Monedas -= gastarPlata; // Al int con mis monedas le voy a restar el dato que recibe desde el botón
+            PlayerPrefs.SetInt("Moneditas", Monedas);
+
+            comidaScript.SendMessage("AddPackComida");
+
+            PlayerPrefs.SetInt("vezCompra", PlayerPrefs.GetInt("vezCompra") + 1);
+            PlayerPrefs.SetInt("ComidaComprada", PlayerPrefs.GetInt("ComidaComprada") + 5);
+
+            ANALYTICS.SendMessage("comprar");
+        }
+    }
+
 }

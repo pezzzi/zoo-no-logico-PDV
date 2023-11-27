@@ -87,7 +87,7 @@ public class Saciedad : MonoBehaviour
     public void AddToQueue()
     {
         print(PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula));
-        if ((PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + (PlayerPrefs.GetInt("FeedJaula" + selectedJaula) * 10)) <= 110)
+        if ((PlayerPrefs.GetInt("SaciedadJaula" + selectedJaula) + (PlayerPrefs.GetInt("FeedJaula" + selectedJaula) * 10)) <= 100)
         {
             if (PlayerPrefs.GetInt("Comida") > 0)
             {
@@ -119,16 +119,16 @@ public class Saciedad : MonoBehaviour
 
     public void AutoFeed()
     {
-        int foodPerCage = (int)MathF.Floor(PlayerPrefs.GetInt("Comida") / PlayerPrefs.GetInt("JaulasOcupadas"));
-        foodPerCage = Math.Max(foodPerCage, 1);
+        //int foodPerCage = (int)MathF.Floor(PlayerPrefs.GetInt("Comida") / PlayerPrefs.GetInt("JaulasOcupadas"));
+        //foodPerCage = Math.Max(foodPerCage, 1);
         for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
             {
                 if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
                 {
-                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) <= 110)
+                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) <= 100)
                     {
-                        for (int e = 0; e < foodPerCage; e++)
-                        {
+                        //for (int e = 0; e < foodPerCage; e++)
+                        //{
                             if (PlayerPrefs.GetInt("Comida") > 0)
                             {
                                 comidaHandler.SendMessage("SubtractComida");
@@ -142,7 +142,7 @@ public class Saciedad : MonoBehaviour
                                 Debug.Log("No tienes más comida");
                             break;
                             }
-                        }
+                        //}
                     }
                     else
                     {
@@ -150,6 +150,23 @@ public class Saciedad : MonoBehaviour
                     }
                 }
             }
+    }
+
+    public void ResetAllFeedQueues()
+    {
+        for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
+        {
+            if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
+            {
+                for (int e = 0; e < PlayerPrefs.GetInt("FeedJaula" + i); e++)
+                {
+                    comidaHandler.SendMessage("AddComida");
+                }
+                PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                feedCount = GameObject.Find("feed" + i);
+                feedCount.GetComponent<TMP_Text>().text = "0";
+            }
+        }
     }
 
     public void HidePantallaFaltaComida()
