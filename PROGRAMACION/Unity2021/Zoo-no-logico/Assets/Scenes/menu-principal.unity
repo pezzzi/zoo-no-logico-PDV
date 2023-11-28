@@ -1516,7 +1516,9 @@ MonoBehaviour:
   selectedJaula: 0
   saciedad: 0
   slider: {fileID: 0}
+  sliderFill: {fileID: 0}
   comida: 0
+  PantallaFaltaComida: {fileID: 0}
   feedCount: {fileID: 0}
   comidaHandler: {fileID: 0}
 --- !u!1 &218527429
@@ -11191,7 +11193,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723330353}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc35d9b9066076441acf74f70327c39d, type: 3}
   m_Name: 

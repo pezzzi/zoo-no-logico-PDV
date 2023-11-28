@@ -60,13 +60,20 @@ public class CageDetailConstructor : MonoBehaviour
 
         myCruzaList = JsonUtility.FromJson<CruzaList>(Cruzas.text);
         int index = PlayerPrefs.GetInt("IndexDesocuparJaula");
-        print(PlayerPrefs.GetInt("IndexDesocuparJaula"));
+        Debug.Log("Index detalle: " + index);
 
         Sprite cruza_test_img = Resources.Load<Sprite>(index.ToString());
-        print(JaulasArray.Length);
+        print("Jaula arrray length: " + JaulasArray.Length);
         //Image Cruza_image = CruzasArray[index].GetComponent<Image>();
+        for (int i = 0; i < JaulasArray.Length; i++)
+        {
+            if (JaulasArray[i].name == index.ToString())
+            {
+                animal.sprite = JaulasArray[i].GetComponent<Image>().sprite;
+            }
+        }
 
-        animal.sprite = JaulasArray[index].GetComponent<Image>().sprite;
+        //animal.sprite = JaulasArray[index].GetComponent<Image>().sprite;
         int cageDivisor;
         if (PlayerPrefs.GetInt("cageDivisor") > 0)
         {

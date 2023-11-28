@@ -426,8 +426,8 @@ public class EventosAnalytics : MonoBehaviour
     public void alimentar(int jaulaIndex)
     {
         AnalyticsService.Instance.CustomData("alimentar", new Dictionary<string, object>(){
-            {"saciedad_previa", PlayerPrefs.GetInt("SaciedadJaula" + jaulaIndex)},
-            {"cant_alimentada", PlayerPrefs.GetInt("FeedJaula" + jaulaIndex)},
+            {"saciedad_pre_alimento", PlayerPrefs.GetInt("SaciedadJaula" + jaulaIndex)},
+            {"cant_comida_dada", PlayerPrefs.GetInt("FeedJaula" + jaulaIndex)},
             {"vez", PlayerPrefs.GetInt("alimentarAnimalTotal")},
         }); //TERMINADO
     }

@@ -122,51 +122,61 @@ public class Saciedad : MonoBehaviour
     {
         //int foodPerCage = (int)MathF.Floor(PlayerPrefs.GetInt("Comida") / PlayerPrefs.GetInt("JaulasOcupadas"));
         //foodPerCage = Math.Max(foodPerCage, 1);
-        for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
+        List<int> activeCages = new List<int>();
+        for (int i = 0; i < 20; i++)
+        {
+            if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
             {
-                if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
-                {
-                    if ((PlayerPrefs.GetInt("SaciedadJaula" + i) + (PlayerPrefs.GetInt("FeedJaula" + i) * 10)) <= 100)
-                    {
-                        //for (int e = 0; e < foodPerCage; e++)
-                        //{
-                            if (PlayerPrefs.GetInt("Comida") > 0)
-                            {
-                                comidaHandler.SendMessage("SubtractComida");
-                                PlayerPrefs.SetInt("FeedJaula" + i, PlayerPrefs.GetInt("FeedJaula" + i) + 1);
-                                feedCount = GameObject.Find("feed" + i);
-                                feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) + 1).ToString();
-                            }
-                            else
-                            {
-                                PantallaFaltaComida.SetActive(true);
-                                Debug.Log("No tienes más comida");
-                            break;
-                            }
-                        //}
-                    }
-                    else
-                    {
-                        Debug.Log("El animal ya estará en 100 de saciedad");
-                    }
-                }
+                activeCages.Add(i);
             }
+        }
+        foreach (int index in activeCages)
+        {
+            if ((PlayerPrefs.GetInt("SaciedadJaula" + index) + (PlayerPrefs.GetInt("FeedJaula" + index) * 10)) <= 100)
+            {
+                //for (int e = 0; e < foodPerCage; e++)
+                //{
+                if (PlayerPrefs.GetInt("Comida") > 0)
+                {
+                    comidaHandler.SendMessage("SubtractComida");
+                    PlayerPrefs.SetInt("FeedJaula" + index, PlayerPrefs.GetInt("FeedJaula" + index) + 1);
+                    feedCount = GameObject.Find("feed" + index);
+                    feedCount.GetComponent<TMP_Text>().text = (int.Parse(feedCount.GetComponent<TMP_Text>().text) + 1).ToString();
+                }
+                else
+                {
+                    PantallaFaltaComida.SetActive(true);
+                    Debug.Log("No tienes más comida");
+                    break;
+                }
+                //}
+            }
+            else
+            {
+                Debug.Log("El animal ya estará en 100 de saciedad");
+            }
+        }
     }
 
     public void ResetAllFeedQueues()
     {
-        for (int i = 0; i < PlayerPrefs.GetInt("JaulasOcupadas"); i++)
+        List<int> activeCages = new List<int>();
+        for (int i = 0; i < 20; i++)
         {
             if (PlayerPrefs.GetInt("JaulaActiva" + i) == 1)
             {
-                for (int e = 0; e < PlayerPrefs.GetInt("FeedJaula" + i); e++)
-                {
-                    comidaHandler.SendMessage("AddComida");
-                }
-                PlayerPrefs.SetInt("FeedJaula" + i, 0);
-                feedCount = GameObject.Find("feed" + i);
-                feedCount.GetComponent<TMP_Text>().text = "0";
+                activeCages.Add(i);
             }
+        }
+        foreach (int index in activeCages) 
+        {
+            for (int e = 0; e < PlayerPrefs.GetInt("FeedJaula" + index); e++)
+            {
+                comidaHandler.SendMessage("AddComida");
+            }
+            PlayerPrefs.SetInt("FeedJaula" + index, 0);
+            feedCount = GameObject.Find("feed" + index);
+            feedCount.GetComponent<TMP_Text>().text = "0";
         }
     }
 
