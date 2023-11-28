@@ -73,6 +73,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -2778,4 +2779,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Logros.unity
   - Assets/Scenes/confirmar-reset.unity
   playerPath: D:/GitHub/zoo-no-logico-SSP/PROGRAMACION/BUILD (esto se sube a itchio)/BUILD
-    SSP FINAL
+    SSP FINAL_2
