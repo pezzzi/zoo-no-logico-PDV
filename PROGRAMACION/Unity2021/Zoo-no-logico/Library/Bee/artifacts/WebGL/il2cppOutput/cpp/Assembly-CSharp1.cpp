@@ -18088,9 +18088,9 @@ IL_0007:
 		int32_t L_3;
 		L_3 = PlayerPrefs_GetInt_m4D859DBEABAD3FB406C94485A0B2638A0C7F2987(_stringLiteral32E99F5187FA7340F0C57A03D8DA2A193F73BBAB, NULL);
 		__this->___comida_9 = L_3;
-		// if (saciedad < 100)
+		// if (saciedad < 110)
 		int32_t L_4 = __this->___saciedad_6;
-		if ((((int32_t)L_4) >= ((int32_t)((int32_t)100))))
+		if ((((int32_t)L_4) >= ((int32_t)((int32_t)110))))
 		{
 			goto IL_00b5;
 		}

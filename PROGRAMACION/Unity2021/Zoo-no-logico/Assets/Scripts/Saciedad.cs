@@ -71,7 +71,7 @@ public class Saciedad : MonoBehaviour
         {
             saciedad = PlayerPrefs.GetInt("SaciedadJaula" + jaula);
             comida = PlayerPrefs.GetInt("Comida");
-            if (saciedad < 100)
+            if (saciedad < 110)
             {
                 print("Nombre: " + PlayerPrefs.GetString("Jaula" + jaula));
                 print("Saciedad antes: " + saciedad);

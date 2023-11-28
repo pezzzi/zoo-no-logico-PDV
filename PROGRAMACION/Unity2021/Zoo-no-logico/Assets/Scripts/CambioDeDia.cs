@@ -104,6 +104,18 @@ public class CambioDeDia : MonoBehaviour {
             PlayerPrefs.SetInt("EventoCartas", 1);
             for (int i = 0; i < 20; i++)
             {
+                int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
+                if (PlayerPrefs.GetInt("SaciedadJaula" + i) > 0 && feedCount > 0)
+                {
+                    PlayerPrefs.SetInt("alimentarAnimalTotal", PlayerPrefs.GetInt("alimentarAnimalTotal") + 1);
+                    ANALYTICS.SendMessage("alimentar", i);
+                    for (int e = 0; e < feedCount; e++)
+                    {
+                        saciedadCtrl.AddSaciedadByJaula(i, feedCount);
+                        PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                    }
+                }
+
                 PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
                 if ((PlayerPrefs.GetInt("JaulaActiva" + i) == 1) && PlayerPrefs.GetInt("SaciedadJaula" + i) <= 0)
                 {
@@ -121,17 +133,6 @@ public class CambioDeDia : MonoBehaviour {
                     PantallaAnimalFallecido.SetActive(true);
                 }
 
-                int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
-                if (PlayerPrefs.GetInt("SaciedadJaula" + i) > 0 && feedCount > 0)
-                {
-                    PlayerPrefs.SetInt("alimentarAnimalTotal", PlayerPrefs.GetInt("alimentarAnimalTotal") + 1);
-                    ANALYTICS.SendMessage("alimentar", i);
-                    for (int e = 0; e < feedCount; e++)
-                    {
-                        saciedadCtrl.AddSaciedadByJaula(i, feedCount);
-                        PlayerPrefs.SetInt("FeedJaula" + i, 0);
-                    }
-                }
                 //PlayerPrefs.GetString("Jaula" + i);
 
             }
