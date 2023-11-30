@@ -19,13 +19,19 @@ public class EventosAnalytics : MonoBehaviour
     {
         try
         {
-            await UnityServices.InitializeAsync();
-            List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
+            var options = new InitializationOptions();
+            options.SetEnvironmentName("zoo-no-logico-ssp");
+            await UnityServices.InitializeAsync(options);
         }
         catch (ConsentCheckException e)
         {
             // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
         }
+    }
+
+    public void ConsentGiven()
+    {
+        AnalyticsService.Instance.StartDataCollection();
     }
 
     public void game_over()
@@ -414,6 +420,34 @@ public class EventosAnalytics : MonoBehaviour
             {"logro26", PlayerPrefs.GetInt("Logro26")},
             {"logro27", PlayerPrefs.GetInt("Logro27")},
             {"logro28", PlayerPrefs.GetInt("Logro28")},
+        }); //TERMINADO
+    }
+
+    public void alimentar(int jaulaIndex)
+    {
+        AnalyticsService.Instance.CustomData("alimentar", new Dictionary<string, object>(){
+            {"saciedad_pre_alimento", PlayerPrefs.GetInt("SaciedadJaula" + jaulaIndex)},
+            {"cant_comida_dada", PlayerPrefs.GetInt("FeedJaula" + jaulaIndex)},
+            {"vez", PlayerPrefs.GetInt("alimentarAnimalTotal")},
+        }); //TERMINADO
+    }
+
+    public void animal_fallecido()
+    {
+        AnalyticsService.Instance.CustomData("animal_fallecido", new Dictionary<string, object>(){
+            {"dias", PlayerPrefs.GetInt("Dias")},
+            {"vez", PlayerPrefs.GetInt("animalMuertoTotal")},
+            {"cupos", PlayerPrefs.GetInt("JaulasOcupadas")},
+        }); //TERMINADO
+    }
+
+    public void comprar_comida(int cantidadComprada)
+    {
+        AnalyticsService.Instance.CustomData("comprar_comida", new Dictionary<string, object>(){
+            {"vez", PlayerPrefs.GetInt("comidaCompradaTotal")},
+            {"dias", PlayerPrefs.GetInt("Dias")},
+            {"dinero", PlayerPrefs.GetInt("Moneditas")},
+            {"cantidad_comprada", cantidadComprada},
         }); //TERMINADO
     }
 }

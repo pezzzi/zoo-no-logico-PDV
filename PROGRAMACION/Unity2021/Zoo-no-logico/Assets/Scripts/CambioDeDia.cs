@@ -12,6 +12,7 @@ public class CambioDeDia : MonoBehaviour {
     public GameObject PantallaPostEvento;
     public GameObject PantallaPerder;
     public GameObject PantallaGanar;
+    public GameObject PantallaAnimalFallecido;
     public int Popularidad;
     public GameObject PopularidadBarra;
     private string[] listaAnimales = new string[] { "Carpincho", "Cocodrilo", "Arana", "Ave", "Serpiente", "Zorro", "Murcielago" };
@@ -23,8 +24,26 @@ public class CambioDeDia : MonoBehaviour {
 
     public float speed = 10.0f;
 
+    [SerializeField] private TextAsset Cruzas;
+
+    [System.Serializable]
+    public class Cruza
+    {
+        public string id;
+        public int popularidad;
+    }
+    [System.Serializable]
+    public class CruzaList
+    {
+        public Cruza[] cruza;
+    }
+
+    public CruzaList myCruzaList = new CruzaList();
+
 
     [SerializeField] private GameObject ANALYTICS;
+
+    [SerializeField] private Saciedad saciedadCtrl;
 
     // Use this for initialization
     void Start() {
@@ -71,6 +90,10 @@ public class CambioDeDia : MonoBehaviour {
 
     public void Pasar()
     {
+        Debug.Log("Nuevo dia");
+        myCruzaList = JsonUtility.FromJson<CruzaList>(Cruzas.text);
+        Debug.Log(myCruzaList + " Cruza list");
+        print("Test: " + myCruzaList.cruza[0].popularidad);
         if (!PantallaPostEvento)
         {
             numTurno++;
@@ -79,12 +102,51 @@ public class CambioDeDia : MonoBehaviour {
             PlayerPrefs.SetInt("Dias", numTurno);
             PopularidadBarra.SetActive(true);
             PlayerPrefs.SetInt("EventoCartas", 1);
+            for (int i = 0; i < 20; i++)
+            {
+                int feedCount = PlayerPrefs.GetInt("FeedJaula" + i);
+                if (PlayerPrefs.GetInt("SaciedadJaula" + i) > 0 && feedCount > 0)
+                {
+                    PlayerPrefs.SetInt("alimentarAnimalTotal", PlayerPrefs.GetInt("alimentarAnimalTotal") + 1);
+                    ANALYTICS.SendMessage("alimentar", i);
+                    for (int e = 0; e < feedCount; e++)
+                    {
+                        saciedadCtrl.AddSaciedadByJaula(i, feedCount);
+                        PlayerPrefs.SetInt("FeedJaula" + i, 0);
+                    }
+                }
+
+                PlayerPrefs.SetInt("SaciedadJaula" + i, PlayerPrefs.GetInt("SaciedadJaula" + i) - 10);
+                if ((PlayerPrefs.GetInt("JaulaActiva" + i) == 1) && PlayerPrefs.GetInt("SaciedadJaula" + i) <= 0)
+                {
+                    PlayerPrefs.SetInt("animalMuertoTotal", PlayerPrefs.GetInt("animalMuertoTotal") + 1);
+                    ANALYTICS.SendMessage("animal_fallecido", i);
+
+                    print(int.Parse(PlayerPrefs.GetString("Jaula" + i)));
+                    PlayerPrefs.SetInt("popularidad", PlayerPrefs.GetInt("popularidad") - myCruzaList.cruza[int.Parse(PlayerPrefs.GetString("Jaula" + i))].popularidad);
+
+                    PlayerPrefs.SetInt("JaulaActiva" + i, 0);
+                    PlayerPrefs.SetInt("SaciedadJaula" + i, 0);
+                    PlayerPrefs.SetInt("JaulasOcupadas", PlayerPrefs.GetInt("JaulasOcupadas") - 1);
+                    PlayerPrefs.SetString("Jaula" + i, "");
+
+                    PantallaAnimalFallecido.SetActive(true);
+                }
+
+                //PlayerPrefs.GetString("Jaula" + i);
+
+            }
         }
         else
         {
             Pantalla.SetActive(false);
             PlayerPrefs.SetInt("ImpuestoXDiasSinCruzas", PlayerPrefs.GetInt("ImpuestoXDiasSinCruzas"));
         }
+    }
+
+    public void CerrarPantallaAnimalFallecido()
+    {
+        PantallaAnimalFallecido.SetActive(false);
     }
 
     public void AbrirPantalla()
@@ -102,7 +164,7 @@ public class CambioDeDia : MonoBehaviour {
             listaAnimales[rnd] = listaAnimales[i];
             listaAnimales[i] = tempGO;
         }
-        print (listaAnimales[0]);
+        print ("RANDOM ACA: " + listaAnimales[0]);
 
         PlayerPrefs.SetString("animal1Tienda", listaAnimales[0]);
         PlayerPrefs.SetString("animal2Tienda", listaAnimales[1]);

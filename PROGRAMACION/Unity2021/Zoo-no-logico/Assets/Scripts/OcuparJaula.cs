@@ -88,6 +88,7 @@ public class OcuparJaula : MonoBehaviour {
 
             PlayerPrefs.SetInt("JaulasOcupadas", PlayerPrefs.GetInt("JaulasOcupadas") + 1);
             PlayerPrefs.SetString("Jaula" + selectedJaula, cruza_num);
+            PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, 50);
             PlayerPrefs.SetInt("popularidad", PlayerPrefs.GetInt("popularidad") + myCruzaList.cruza[int.Parse(cruza_num)].popularidad);
 
         }

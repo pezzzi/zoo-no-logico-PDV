@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 
 public class JaulaManager : MonoBehaviour {
 
@@ -38,6 +38,10 @@ public class JaulaManager : MonoBehaviour {
     public GameObject[] JaulasArray;
 
     public TextAsset Cruzas;
+
+    public GameObject barraSaciedad;
+
+    public GameObject feedCount;
 
     [System.Serializable]
     public class Cruza
@@ -92,6 +96,49 @@ public class JaulaManager : MonoBehaviour {
         for (int i = 0; i < JaulasActivas.Length; i++)
         {
             JaulasActivas[i] = PlayerPrefs.GetInt("JaulaActiva" + i, JaulasActivas[i]);
+            barraSaciedad = GameObject.Find("BarraSaciedad" + i);
+            if (barraSaciedad)
+            {
+                Image barraFill = barraSaciedad.GetComponentInChildren<Image>();
+
+                if (barraFill)
+                {
+                    if (PlayerPrefs.GetInt("SaciedadJaula" + i) >= 70)
+                    {
+                        barraFill.color = new Color(0.259f, 0.85f, 0.188f, 1);
+                    }
+                    else if (PlayerPrefs.GetInt("SaciedadJaula" + i) < 70 && PlayerPrefs.GetInt("SaciedadJaula" + i) >= 40)
+                    {
+                        barraFill.color = new Color(0.894f, 0.941f, 0.118f, 1);
+                    }
+                    else if (PlayerPrefs.GetInt("SaciedadJaula" + i) < 40)
+                    {
+                        barraFill.color = new Color(0.89f, 0.239f, 0.216f, 1);
+                    }
+                }
+            }
+            
+            feedCount = GameObject.Find("feed" + i);
+
+            if (barraSaciedad)
+            {
+                GameObject.Find("BarraSaciedad" + i).GetComponent<Slider>().value = PlayerPrefs.GetInt("SaciedadJaula" + i);
+            }
+
+            if (feedCount)
+            {
+                if (JaulasActivas[i] == 1)
+                {
+                    print("Jaula " + i + " Activa");
+                    feedCount.GetComponent<TMP_Text>().text = PlayerPrefs.GetInt("FeedJaula" + i).ToString();
+                }
+                else
+                {
+                    print("Jaula " + i + " Inctiva");
+                    feedCount.GetComponent<TMP_Text>().text = "0";
+                }
+            }
+
         }
 
 
@@ -154,6 +201,7 @@ public class JaulaManager : MonoBehaviour {
 
         JaulasArray[selectedJaula].SetActive(false);
         PlayerPrefs.SetInt("JaulaActiva" + selectedJaula, 0);
+        PlayerPrefs.SetInt("SaciedadJaula" + selectedJaula, 0);
         PlayerPrefs.SetInt("JaulasOcupadas", PlayerPrefs.GetInt("JaulasOcupadas") - 1);
         PlayerPrefs.SetString("Jaula" + selectedJaula, "");
 
